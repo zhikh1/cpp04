@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.h                                         :+:      :+:    :+:   */
+/*   Dog.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nomargen <nomargen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 21:52:14 by nomargen          #+#    #+#             */
-/*   Updated: 2022/10/13 22:11:36 by nomargen         ###   ########.fr       */
+/*   Created: 2022/10/17 22:10:34 by nomargen          #+#    #+#             */
+/*   Updated: 2022/10/18 22:02:08 by nomargen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#ifndef DOG_H
+# define DOG_H
 
-#include <iostream>
-#include "ClapTrap.h"
+#include "Animal.h"
 
-class ScavTrap : public ClapTrap
+class Dog : public Animal
 {
 public:
-    ScavTrap( std::string name );
-    ~ScavTrap();
+    Dog( void );
+    ~Dog( void );
+    Dog( const Dog& other );
+    Dog& operator=( const Dog& other );
 
-    void    attack(std::string const& target);
-    void    guardGate();
+    void   makeSound( void ) const;
+private:    
+    Brain   *brain;
 };
 
 #endif

@@ -6,19 +6,19 @@
 #    By: nomargen <nomargen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 19:32:48 by nomargen          #+#    #+#              #
-#    Updated: 2022/10/12 21:45:31 by nomargen         ###   ########.fr        #
+#    Updated: 2022/10/17 23:22:41 by nomargen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	claptrap
+NAME		=	animal
 
 CC			=	c++
 
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98
 
-SRC			=	main.cpp ClapTrap.cpp
+SRC			=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
-INC			=	ClapTrap.h 
+INC			=	Animal.h Dog.h Cat.h WrongAnimal.h WrongCat.h
 
 RM			=	rm -rf
 

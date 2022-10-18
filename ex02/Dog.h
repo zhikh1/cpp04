@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.h                                         :+:      :+:    :+:   */
+/*   Dog.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nomargen <nomargen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 23:00:10 by nomargen          #+#    #+#             */
-/*   Updated: 2022/10/13 23:02:12 by nomargen         ###   ########.fr       */
+/*   Created: 2022/10/17 22:10:34 by nomargen          #+#    #+#             */
+/*   Updated: 2022/10/18 22:02:08 by nomargen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FRAGTRAP_H
-#define FRAGTRAP_H
+#ifndef DOG_H
+# define DOG_H
 
-#include "ClapTrap.h"
+#include "Animal.h"
 
-class FragTrap : public ClapTrap
+class Dog : public Animal
 {
 public:
-    FragTrap(std::string name);
-    ~FragTrap();
+    Dog( void );
+    ~Dog( void );
+    Dog( const Dog& other );
+    Dog& operator=( const Dog& other );
 
-    void    highFive( void );
+    void   makeSound( void ) const;
+private:    
+    Brain   *brain;
 };
 
 #endif

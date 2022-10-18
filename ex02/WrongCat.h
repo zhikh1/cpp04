@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.h                                         :+:      :+:    :+:   */
+/*   WrongCat.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nomargen <nomargen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 21:14:37 by nomargen          #+#    #+#             */
-/*   Updated: 2022/10/13 22:09:56 by nomargen         ###   ########.fr       */
+/*   Created: 2022/10/17 22:13:12 by nomargen          #+#    #+#             */
+/*   Updated: 2022/10/17 23:22:43 by nomargen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include <iostream>
+#include "WrongAnimal.h"
 
-class ClapTrap
+class WrongCat : public WrongAnimal
 {
 public:
-	ClapTrap(std::string name);
-	ClapTrap(ClapTrap const &other);
-	ClapTrap &operator= (ClapTrap const &other);
-	~ClapTrap();
-	
-	void		attack(const std::string& target);
-	void		takeDamage(unsigned int amount);
-	void		beRepaired(unsigned int amount);
+    WrongCat( void );
+    ~WrongCat( void );
 
-protected:
-	std::string	name;
-	int			hitPoints;
-	int			energyPoints;
-	int			attackDamage;	
+    void   makeSound( void ) const;
 };
 
 #endif

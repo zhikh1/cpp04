@@ -6,20 +6,35 @@
 /*   By: nomargen <nomargen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:38:59 by nomargen          #+#    #+#             */
-/*   Updated: 2022/10/17 21:11:46 by nomargen         ###   ########.fr       */
+/*   Updated: 2022/10/18 22:26:35 by nomargen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "FragTrap.h"
+#include "Dog.h"
+#include "Cat.h"
 
-int main( void )
+#include "WrongCat.h"
+
+int main(void)
 {
-    FragTrap player1( "Bob" );
-    FragTrap player2( player1 );
+    // const Animal notWorked;
+    
+    std::cout << "<-----------------1---------------->" << std::endl;
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
 
-    player1.attack( "the air" );
-    player1.takeDamage( 10 );
-    player1.beRepaired( 10 );
-    player1.highFive();
+    delete j;//should not create a leak
+    delete i;
 
-    return 0;
+    std::cout << "<-----------------2---------------->" << std::endl;
+    Dog staticDog;
+    Dog tmpDog = staticDog;
+
+    std::cout << "<-----------------3---------------->" << std::endl;
+    const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
+    for ( int i = 0; i < 4; i++ ) {
+        delete animals[i];
+    }
+
+    std::cout << "<-----------------4---------------->" << std::endl;
+    return (0);
 }
