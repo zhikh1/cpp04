@@ -15,7 +15,7 @@ Brain::Brain( void )
 {
     for (int i = 0; i < 100; i++)
     {
-        this->ideas[i] = "None" + i;
+        this->ideas[i] = "None";
     }
     std::cout << "Brain constructor was called" << std::endl;
 }
